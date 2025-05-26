@@ -26,10 +26,24 @@
   <h1>ASSISTENTE VOCALE BREVITY COACH</h1>
   <p>Premi "Chat vocale" e parla con il tuo Coach Brevity</p>
 
-  <div class="widget-container">
-    <!-- Inserisci qui il codice esatto copiato da ElevenLabs -->
-    <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
-    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+  <!-- Contenitore dove verrà caricato il widget -->
+  <div class="widget-container" id="widget-container">
+    <!-- Il widget verrà aggiunto via script -->
   </div>
+
+  <!-- Script per caricare dinamicamente il widget -->
+  <script>
+    // Crea dinamicamente il tag <script> del widget
+    const script = document.createElement("script");
+    script.src = "https://elevenlabs.io/convai-widget/index.js";
+    script.async = true;
+    script.onload = () => {
+      // Una volta caricato lo script, crea il tag custom
+      const widget = document.createElement("elevenlabs-convai");
+      widget.setAttribute("agent-id", "tCZh8L9zsjh3Cv2VE1lE");
+      document.getElementById("widget-container").appendChild(widget);
+    };
+    document.head.appendChild(script);
+  </script>
 </body>
 </html>
