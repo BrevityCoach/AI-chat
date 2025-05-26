@@ -8,30 +8,21 @@
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 50px;
       background: #f2f2f2;
+      padding: 50px;
     }
 
     h1 {
       color: #004080;
       text-transform: uppercase;
-      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 40px;
-    }
-
-    .widget-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .widget-scaler {
-      transform: scale(1.8);
-      transform-origin: top center;
+    iframe {
+      margin-top: 40px;
+      border: none;
+      width: 100%;
+      max-width: 420px;
+      height: 700px;
     }
   </style>
 </head>
@@ -39,12 +30,9 @@
   <h1>ASSISTENTE VOCALE BREVITY COACH</h1>
   <p>Premi "Chat vocale" e parla con il tuo Coach Brevity</p>
 
-  <div class="widget-wrapper">
-    <div class="widget-scaler">
-      <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE" mode="embedded"></elevenlabs-convai>
-    </div>
-  </div>
-
-  <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+  <iframe 
+    src="https://elevenlabs.io/app/talk-to?agent_id=tCZh8L9zsjh3Cv2VE1lE" 
+    allow="microphone; autoplay">
+  </iframe>
 </body>
 </html>
