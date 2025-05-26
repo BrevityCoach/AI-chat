@@ -17,15 +17,15 @@
       text-transform: uppercase;
     }
 
-    .widget-container {
-      margin-top: 60px;
+    .widget-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 60px;
     }
 
-    .widget-container elevenlabs-convai {
-      transform: scale(2); /* Doppio della dimensione originale */
+    .widget-scaler {
+      transform: scale(1.8);
       transform-origin: top center;
     }
   </style>
@@ -34,8 +34,10 @@
   <h1>ASSISTENTE VOCALE BREVITY COACH</h1>
   <p>Premi "Chat vocale" e parla con il tuo Coach Brevity</p>
 
-  <div class="widget-container">
-    <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
+  <div class="widget-wrapper">
+    <div class="widget-scaler">
+      <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
+    </div>
   </div>
 
   <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
