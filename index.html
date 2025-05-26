@@ -15,42 +15,21 @@
       color: #004080;
       text-transform: uppercase;
     }
-    .custom-button {
+    .widget-container {
       margin-top: 40px;
-      background: #000;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
   <h1>ASSISTENTE VOCALE BREVITY COACH</h1>
-  <p>Premi il pulsante qui sotto per attivare la chat vocale</p>
+  <p>Premi il pulsante "Chat vocale" qui sotto per attivare la chat con il tuo coach.</p>
 
-  <button class="custom-button" id="start-voice">🎤 Avvia Chat Vocale</button>
+  <div class="widget-container">
+    <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
+  </div>
 
-  <!-- Widget -->
-  <elevenlabs-convai id="brevity-widget" agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
   <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-
-  <!-- Script per cliccare il bottone nel widget -->
-  <script>
-    document.getElementById("start-voice").addEventListener("click", () => {
-      const waitForWidget = setInterval(() => {
-        const widget = document.getElementById("brevity-widget");
-        if (widget && widget.shadowRoot) {
-          const button = widget.shadowRoot.querySelector("button");
-          if (button) {
-            button.click();
-            clearInterval(waitForWidget);
-          }
-        }
-      }, 200);
-    });
-  </script>
 </body>
 </html>
