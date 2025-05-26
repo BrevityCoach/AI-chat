@@ -15,35 +15,27 @@
       color: #004080;
       text-transform: uppercase;
     }
-    .widget-container {
+    .custom-button {
       margin-top: 40px;
-      display: flex;
-      justify-content: center;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h1>ASSISTENTE VOCALE BREVITY COACH</h1>
-  <p>Premi "Chat vocale" e parla con il tuo Coach Brevity</p>
+  <p>Premi il pulsante qui sotto per attivare la chat vocale</p>
 
-  <!-- Contenitore dove verrà caricato il widget -->
-  <div class="widget-container" id="widget-container">
-    <!-- Il widget verrà aggiunto via script -->
-  </div>
+  <button class="custom-button" onclick="document.querySelector('elevenlabs-convai').shadowRoot.querySelector('button').click();">
+    🎤 Avvia Chat Vocale
+  </button>
 
-  <!-- Script per caricare dinamicamente il widget -->
-  <script>
-    // Crea dinamicamente il tag <script> del widget
-    const script = document.createElement("script");
-    script.src = "https://elevenlabs.io/convai-widget/index.js";
-    script.async = true;
-    script.onload = () => {
-      // Una volta caricato lo script, crea il tag custom
-      const widget = document.createElement("elevenlabs-convai");
-      widget.setAttribute("agent-id", "tCZh8L9zsjh3Cv2VE1lE");
-      document.getElementById("widget-container").appendChild(widget);
-    };
-    document.head.appendChild(script);
-  </script>
+  <elevenlabs-convai agent-id="tCZh8L9zsjh3Cv2VE1lE"></elevenlabs-convai>
+  <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 </body>
 </html>
